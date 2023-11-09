@@ -1,0 +1,114 @@
+
+Hibernet is a java framework that simlifies the developement of java 
+application to interact with the database.
+
+pre-requicite:
+1.core java
+2.JDBC
+3.DBMS
+
+it is invented by Gavin King in 2001.
+it is an open source ,lighweight,ORM(object relational mapping) tool.
+Hibernet implements the specification of JPA(java persistence API) for data persistence.
+is a non-inverse framework , means it wont forces to programmers to extend/implement any class
+or interface.
+any type of application can build with Hibernet framework.
+
+JDBC API 
+
+java CLass(object) ------>   JDBC API --------> DB
+
+class program{
+    class.forName("drivername);
+    Connection conn = DriverManager.getConnection(url,username,password);
+    PrepareStatment stm = conn.prepareStatment(sql query);
+    executeQuery();
+    conn.close.
+}
+
+
+Hibernet API
+
+java class(object) --------> Hibernet(ORM) -------> Db (XML,Annotation)
+
+index of/ dtd link
+https://hibernate.org/dtd/
+
+maveen repository link for hibernate
+https://mvnrepository.com/artifact/com.mysql/mysql-connector-j/8.1.0
+
+
+@Annotations:
+1. @Entity
+2. @Table
+3. @id
+4. @GeneratedValue
+5. @Column
+6. @Transient
+7. @Temporal
+8. @Lob (large object)
+9. @OneToOne
+10. @OneToMany
+11. @ManyToOne
+12. @ManyToMany
+13. @JoinColoumn
+
+
+
+Fetch Type :
+
+FetchType.LAZY : it fetches the child entities lazily, that is at the time of fetching parent entity it just fetch proxy(created by cglib 
+or other utility) of the child entitites and when u access any property of child entity then it is actually fetch by hibernate.
+
+lazy initialization improves performance by avoiding unnecessary computation and reduce memory requirement.
+
+FetchType.EAGER : it fetches the child entities along with parent.
+depend on the situation either one of this initialization can be used.
+
+CasCade : it referse to the automatic persistence of related entities. when a change is made to an entity, such as an update
+or deletion, the changes can be cascaded to related entities as well.
+which is ORM tool used in java to map java classes to database tables.
+
+@OneToMany(cascade=CascadeType.ALL)
+different types.
+cascade=CascadeType.ALL
+cascade=CascadeType.PERSIST
+cascade=CascadeType.MERGE
+cascade=CascadeType.REMOVE
+cascade=CascadeType.REFRESH
+cascade=CascadeType.SAVE_UPDATE
+
+
+
+HQL : hibernate query language is an object oriented query language similer to sql but instead of
+operating on tables and columns hql works with persistent object and their properties.
+
+hql queries are translated by hibernate into conventional sql queries which in turns perform action on database.
+
+select * from student where id=30;
+
+session.save(object);
+
+session.get(student.class,101);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
